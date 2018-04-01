@@ -5,7 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard <span class="pull-right"><a href="/listings/create" class="btn btn-success btn-xs">Add Listing</a></span>
+                <div class="card-header">Dashboard <span class="pull-right"><a href="/listings/create"
+                                                                               class="btn btn-success btn-xs">Add Listing</a></span>
                 </div>
 
                 <div class="card-body">
@@ -26,6 +27,8 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Address</th>
                                 <th scope="col">Web</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -37,6 +40,9 @@
                                     <td>{{ $listing->name }}</td>
                                     <td>{{ $listing->address }}</td>
                                     <td>{{ $listing->website }}</td>
+
+                                    <td><a href="/listings/{{$listing->id}}/edit" class="btn btn-info">Edit</a></td>
+                                    <td><a href="#" class="btn btn-danger">Delete</a></td>
 
 
                                 </tr>
