@@ -42,7 +42,19 @@
                                     <td>{{ $listing->website }}</td>
 
                                     <td><a href="/listings/{{$listing->id}}/edit" class="btn btn-info">Edit</a></td>
-                                    <td><a href="#" class="btn btn-danger">Delete</a></td>
+                                    <td>
+
+                                        {!!Form::open(['action' => ['ListingsController@destroy', $listing->id],'method' => 'POST', 'class'=>'pull-left', 'onsubmit'=>'return confirm("Are you sure?")' ])!!}
+
+                                        {{Form::hidden('_method', 'DELETE')}}
+
+
+
+                                        {{Form::bsSubmit('delete', ['class'=>'btn btn-danger'])}}
+                                        {!! Form::close() !!}
+
+
+                                    </td>
 
 
                                 </tr>
